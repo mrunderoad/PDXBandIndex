@@ -5,36 +5,40 @@
 @using PDXBandIndex.Models;
 @model IEnumerable<PDXBandIndex.Models.Band>
 
-<h1>Welcome to the PDX Band Index!</h1>
+<h1 class="welcome">Welcome to the PDX Band Index!</h1>
 <div class="row">
   <div class="col-md-3">
     <hr />
-    <button>@Html.ActionLink("See all bands", "Index", "Bands")</button>
+    <button>@Html.ActionLink("Check out the Bands", "Index", "Bands")</button>
     <hr /> 
-    <button>@Html.ActionLink("See all genres", "Index", "Genres")</button>
+    <button>@Html.ActionLink("See all Genres", "Index", "Genres")</button>
     <hr />
-    <button>@Html.ActionLink("See all shows", "Index", "Shows")</button>
-    <hr />
-    @if (User.Identity.IsAuthenticated) {
-      <button>@Html.ActionLink("Account Page", "Index", "Account")</button>
-    }
-    else
-    {
-    <button>@Html.ActionLink("Create an account", "Index", "Account")</button>
-    }
+    <button>@Html.ActionLink("Check for Shows", "Index", "Shows")</button>
     <hr />
   </div>
   <div class="col-md-6 middle">
-    <h3>Upcoming Shows</h3>
+    <h3 class="upcoming">Upcoming Shows</h3>
     <hr />
     <div class="row">
     @foreach (var shows in ViewBag.Shows) {
-      <div class="card"><p>@Html.ActionLink($"{shows.Venue}", "Details", "Shows", new { id = shows.ShowId })</p> <img alt="No Flyer Avaliable" src="{shows.Flyer}">
-      <p>@Html.ActionLink($"{shows.Time}", "Details", "Shows")</p></div>
+      <div class="card"><p>@Html.ActionLink($"{shows.Venue}", "Details", "Shows", new { id = shows.ShowId })</p><p>@Html.ActionLink($"{shows.Date.Month}", "Details", "Shows")/@Html.ActionLink($"{shows.Date.Day}", "Details", "Shows")/@Html.ActionLink($"{shows.Date.Year}", "Details", "Shows")</p></div>
     }
     </div>
   </div>
   <div class="col-md-3">
-    <h1>Test</h1>
+    @if (User.Identity.IsAuthenticated)
+    {
+      <p>Hello @User.Identity.Name!</p>
+      <hr />
+      <p>Welcome to the PDX Band Index website. Made by Isaac Overstreet as the last independent project for the Epicodus Coding Bootcamp.</p>
+      <hr />
+      <p><em>Rock On!</em></p>
+      
+    }
+    else
+    {
+      <p>@Html.ActionLink("Register", "Register", "Account")</p>
+      <p>@Html.ActionLink("Log in", "Login", "Account")</p>
+    }
   </div>
 </div>

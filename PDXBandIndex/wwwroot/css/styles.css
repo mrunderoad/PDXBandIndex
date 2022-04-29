@@ -1,6 +1,6 @@
 body {
-  background: linear-gradient(to bottom, grey, white, grey);
-  /* height: 100%; */
+  background: linear-gradient(to bottom, rgb(159, 159, 159), white, rgb(161, 161, 161));
+  height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   font-family: monospace;
@@ -24,18 +24,28 @@ div#header {
   width:100%;
   color:#CCC;
   background:#333;
-  padding:8px;
+  padding:5px;
 }
 
 .home-btn {
-  border-radius: 5px;
-  margin-left: 20vw;
+  margin-left: 10vw;
+  margin-top: 8px;
+}
+
+.log-btn {
+  /* margin-left: 2vw; */
+  float: right;
 }
 
 .col-md-3, .col-md-6 {
   border: #333 2px solid;
   height: auto;
   text-align: center;
+}
+
+.col-md-3 {
+  padding-top: 75px;
+  padding-bottom: auto;
 }
 
 hr {
@@ -52,8 +62,13 @@ hr {
   padding-left: 7px;
   padding-right: 7px;
   margin-left: 12px;
+  margin-bottom: 12px;
 }
 
 .row {
   flex-wrap: wrap;
+}
+
+.welcome {
+  margin-bottom: 20px;
 }
