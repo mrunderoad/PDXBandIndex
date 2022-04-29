@@ -61,6 +61,7 @@ namespace PDXBandIndex.Controllers
     public ActionResult Delete(int id)
     {
       var thisShow = _db.Shows.FirstOrDefault(show => show.ShowId == id);
+      
       return View(thisShow);
     }
 
@@ -68,6 +69,10 @@ namespace PDXBandIndex.Controllers
     public ActionResult DeleteConfirmed(int id)
     {
       var thisShow = _db.Shows.FirstOrDefault(show => show.ShowId == id);
+      if (thisShow.Date < System.DateTime.Now) {
+        _db.Shows.Remove(thisShow);
+        _db.SaveChanges();
+      }
       _db.Shows.Remove(thisShow);
       _db.SaveChanges();
       return RedirectToAction("Index");

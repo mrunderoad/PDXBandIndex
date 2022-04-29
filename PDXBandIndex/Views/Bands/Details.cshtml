@@ -4,20 +4,19 @@
 
 @model PDXBandIndex.Models.Band
 
-<h2>Band Details</h2>
+<h2>@Html.DisplayFor(model => model.Name)</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 <h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
 <h3>@Html.DisplayNameFor(model => model.Members): @Html.DisplayFor(model => model.Members)</h3>
 <h3>@Html.DisplayNameFor(model => model.Music): </h3>
 
 @if(@Model.JoinEntities.Count == 0)
 {
-  <p>This Band does not belong to any Genres</p>
+  <p>@Html.DisplayFor(model => model.Name) is not assigned to any Genres yet!</p>
 }
 else
 {
-  <h4>Genres the Band belongs to:</h4>
+  <h4>Genres for @Html.DisplayFor(model => model.Name)</h4>
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
@@ -27,11 +26,11 @@ else
 }
 @if(@Model.JoinEntities2.Count == 0)
 {
-  <p>This Band does not belong to any Shows</p>
+  <p>@Html.DisplayFor(model => model.Name) has no upcoming shows.</p>
 }
 else
 {
-  <h4>Shows the Band belongs to:</h4>
+  <h4>Shows @Html.DisplayFor(model => model.Name) is playing</h4>
   <ul>
   @foreach(var join in Model.JoinEntities2)
   {
@@ -55,5 +54,5 @@ else
 <p>@Html.ActionLink("Back to list", "Index")</p>
 <p>@Html.ActionLink("Edit Band", "Edit", new { id = Model.BandId })</p>
 <p>@Html.ActionLink("Delete Band", "Delete", new { id = Model.BandId })</p>
-<p>@Html.ActionLink("Add a Genre", "AddGenre", new { id = Model.BandId })</p>
-<p>@Html.ActionLink("Add a Show", "AddShow", new { id = Model.BandId })</p>
+<p>@Html.ActionLink("Add a Genre to this band", "AddGenre", new { id = Model.BandId })</p>
+<p>@Html.ActionLink("Add this band to a show!", "AddShow", new { id = Model.BandId })</p>

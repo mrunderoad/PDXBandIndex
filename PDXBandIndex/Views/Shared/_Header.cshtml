@@ -7,6 +7,7 @@
       <h5 class="home-btn">@Html.ActionLink("Home", "Index", "Home")</h5>
       @if (User.Identity.IsAuthenticated) {
         <h5 class="log-btn">@Html.ActionLink("Log Out", "Index", "Account")</h5>
+        <h5 class="log-btn">@Html.ActionLink("Shows", "Index", "Shows")</h5>
       } 
       else
       {
