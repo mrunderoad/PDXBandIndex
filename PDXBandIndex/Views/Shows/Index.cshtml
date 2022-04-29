@@ -14,7 +14,7 @@
 <ul>
   @foreach(Show show in Model)
   {
-    <li>@Html.ActionLink($"{show.Venue}", "Details", new { id = show.ShowId })</li>
+    <li>@Html.ActionLink($"{show.Venue}", "Details", new { id = show.ShowId }) - @Html.ActionLink($"{show.Date}", "Details", new { id = show.ShowId})</li>
   }
 </ul>
 

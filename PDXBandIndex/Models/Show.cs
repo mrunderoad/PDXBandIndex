@@ -15,6 +15,7 @@ namespace PDXBandIndex.Models
     public string Venue { get; set; }
     public DateTime Date { get; set; }
     public string Info { get; set; }
+    public string Time { get; set; }
     public virtual ICollection<BandShow> JoinEntities { get; set; }
   }
 }

@@ -7,6 +7,8 @@
 <h2>Show Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Venue): @Html.DisplayFor(model => model.Venue)</h3>
+<h3>@Html.DisplayNameFor(model => model.Date): @Html.DisplayFor(model => model.Date.Month)/@Html.DisplayFor(model => model.Date.Day)/@Html.DisplayFor(model => model.Date.Year)</h3>
+<h3>@Html.DisplayNameFor(model => model.Info): @Html.DisplayFor(model => model.Info)</h3>
 
 @if(@Model.JoinEntities.Count == 0)
 {
