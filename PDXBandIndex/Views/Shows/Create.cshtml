@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PDXBandIndex.Models.Show
+
+<h4>Add a new show</h4>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Venue)
+  @Html.TextBoxFor(model => model.Venue)
+  <input type="submit" value="Add new show" />
+}
+<p>@Html.ActionLink("Show all Shows", "Index")</p>

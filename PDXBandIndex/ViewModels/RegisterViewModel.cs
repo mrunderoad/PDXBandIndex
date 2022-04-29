@@ -6,17 +6,17 @@ namespace PDXBandIndex.ViewModels
   {
     [Required]
     [EmailAddress]
-    [Display(nameof = "Email")]
+    [Display(Name = "Email")]
     public string Email { get; set; }
 
     [Required]
     [DataType(DataType.Password)]
-    [Display(nameof = "Password")]
+    [Display(Name = "Password")]
     public string Password { get; set; }
 
     [DataType(DataType.Password)]
     [Display(Name = "Confirm Password")]
-    [Comare("Password", ErrorMessage = "Your passwords do not match. Rock ON!")]
+    [Compare("Password", ErrorMessage = "Your passwords do not match. Rock ON!")]
     public string ConfirmPassword { get; set; }
     
 

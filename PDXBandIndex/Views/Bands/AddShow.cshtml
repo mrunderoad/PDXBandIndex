@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PDXBandIndex.Models.Band
+
+<h2>Add a genre</h2>
+
+<h4>Add a show to this band: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.BandId)
+
+    @Html.Label("Select show")
+    @Html.DropDownList("ShowId")
+
+    <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>

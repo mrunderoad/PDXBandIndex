@@ -10,6 +10,7 @@ namespace PDXBandIndex.Models
     public Band()
     {
       this.JoinEntities = new HashSet<GenreBand>();
+      this.JoinEntities2 = new HashSet<BandShow>();
     }
 
     public int BandId { get; set; }
@@ -19,6 +20,6 @@ namespace PDXBandIndex.Models
     public string Music { get; set; }
     public virtual ApplicationUser User { get; set; }
     public virtual ICollection<GenreBand> JoinEntities { get; }
-    public virtual ICollection<BandShow> JoinEntities { get; }
+    public virtual ICollection<BandShow> JoinEntities2 { get; }
   }
 }

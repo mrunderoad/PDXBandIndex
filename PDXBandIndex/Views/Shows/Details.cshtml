@@ -1,0 +1,28 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PDXBandIndex.Models.Genre;
+
+<h2>Show Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Venue): @Html.DisplayFor(model => model.Venue)</h3>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This Show does not contain any Bands yet.</p>
+}
+else
+{
+  <h4>Bands the Show contains:</h4>
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <li>@join.Band.Name</li>
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Back to shows", "Index")</p>
+<p>@Html.ActionLink("Edit show", "Edit", new { id = Model.ShowId })</p>
+<p>@Html.ActionLink("Delete show", "Delete", new { id = Model.ShowId })</p>
