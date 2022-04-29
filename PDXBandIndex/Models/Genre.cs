@@ -10,7 +10,7 @@ namespace PDXBandIndex.Models
     } 
 
     public int GenreId { get; set; }
-    public string GenreName { get; set; }
+    public string Name { get; set; }
     public virtual ICollection<GenreBand> JoinEntities { get; set; }
   }
 }
