@@ -15,6 +15,8 @@
   @Html.TextBoxFor(model => model.Time, new { type = "time" })
   @Html.LabelFor(model => model.Info)
   @Html.TextBoxFor(model => model.Info)
+  @Html.LabelFor(model => model.Flyer)
+  @Html.TextBoxFor(model => model.Flyer)
   <input type="submit" value="Add new show" />
 }
 <p>@Html.ActionLink("Show all Shows", "Index")</p>

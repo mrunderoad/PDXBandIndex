@@ -1,7 +1,10 @@
-.body {
-  background-image: linear-gradient(to bottom, grey, white, grey);
-  
+body {
+  background: linear-gradient(to bottom, grey, white, grey);
+  /* height: 100%; */
+  background-size: cover;
   background-repeat: no-repeat;
+  font-family: monospace;
+  text-align: center;
 }
 
 div#footer {
@@ -25,10 +28,32 @@ div#header {
 }
 
 .home-btn {
-  padding: 3px;
-  
+  border-radius: 5px;
+  margin-left: 20vw;
 }
 
-.col-md-3, .col-md-4 {
+.col-md-3, .col-md-6 {
   border: #333 2px solid;
+  height: auto;
+  text-align: center;
+}
+
+hr {
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+}
+
+.middle {
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 265px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-left: 12px;
+}
+
+.row {
+  flex-wrap: wrap;
 }

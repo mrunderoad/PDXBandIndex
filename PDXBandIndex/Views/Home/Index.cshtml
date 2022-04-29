@@ -2,23 +2,39 @@
   Layout = "_Layout";
 }
 
+@using PDXBandIndex.Models;
+@model IEnumerable<PDXBandIndex.Models.Band>
+
 <h1>Welcome to the PDX Band Index!</h1>
 <div class="row">
   <div class="col-md-3">
-    <p>@Html.ActionLink("See all bands", "Index", "Bands")</p> <p>@Html.ActionLink("See all genres", "Index", "Genres")</p>
-    <p>@Html.ActionLink("See all shows", "Index", "Shows")</p>
+    <hr />
+    <button>@Html.ActionLink("See all bands", "Index", "Bands")</button>
+    <hr /> 
+    <button>@Html.ActionLink("See all genres", "Index", "Genres")</button>
+    <hr />
+    <button>@Html.ActionLink("See all shows", "Index", "Shows")</button>
+    <hr />
     @if (User.Identity.IsAuthenticated) {
-      <p>@Html.ActionLink("Account Page", "Index", "Account")</p>
+      <button>@Html.ActionLink("Account Page", "Index", "Account")</button>
     }
     else
     {
-    <p>@Html.ActionLink("Create an account", "Index", "Account")</p>
+    <button>@Html.ActionLink("Create an account", "Index", "Account")</button>
     }
+    <hr />
   </div>
-  <div class="col-md-4">
-    <h1>Test</h1>
+  <div class="col-md-6 middle">
+    <h3>Upcoming Shows</h3>
+    <hr />
+    <div class="row">
+    @foreach (var shows in ViewBag.Shows) {
+      <div class="card"><p>@Html.ActionLink($"{shows.Venue}", "Details", "Shows", new { id = shows.ShowId })</p> <img alt="No Flyer Avaliable" src="{shows.Flyer}">
+      <p>@Html.ActionLink($"{shows.Time}", "Details", "Shows")</p></div>
+    }
+    </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-3">
     <h1>Test</h1>
   </div>
 </div>

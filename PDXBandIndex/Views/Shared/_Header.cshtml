@@ -1,8 +1,17 @@
+
+
 <div id="header">
   <div class="container">
     <div class="row">
       <h2 class="logo-text">PDX Band Index</h2>
       <button class="home-btn">@Html.ActionLink("Home", "Index", "Home")</button>
+      @if (User.Identity.IsAuthenticated) {
+        <button class="log-btn">@Html.ActionLink("Log Out", "Index", "Account")</button>
+      } 
+      else
+      {
+        <button class="log-btn">@Html.ActionLink("Log In", "Index", "Account")</button>
+      }
     </div>
   </div> 
 </div> 
