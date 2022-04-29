@@ -41,11 +41,14 @@ div#header {
   border: #333 2px solid;
   height: auto;
   text-align: center;
+  justify-content: center;
+  border-radius: 10px;
 }
 
 .col-md-3 {
-  padding-top: 75px;
+  padding-top: 25px;
   padding-bottom: auto;
+  justify-content: center;
 }
 
 hr {
@@ -57,7 +60,7 @@ hr {
   flex-wrap: wrap;
 }
 
-.card {
+.c1 {
   width: 265px;
   padding-left: 7px;
   padding-right: 7px;
@@ -71,4 +74,25 @@ hr {
 
 .welcome {
   margin-bottom: 20px;
+  text-shadow: 2px 2px 2px white;
+}
+
+.logo-text {
+  text-shadow: 2px 2px 2px black;
+}
+
+.c2 {
+  background-color: rgba(128, 128, 128, 0.459);
+  border: 2px black solid;
+  margin-top: 25px;
+  flex-wrap: wrap;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+
+.c3 {
+  padding: 5px;
+  margin-left: 12px;
+  margin-bottom: 12px;
 }
