@@ -4,7 +4,7 @@
 
 @using PDXBandIndex.Models;
 
-<h1>Genres</h1>
+<h1>Shows</h1>
 
 @if (@Model.Count == 0)
 {
@@ -14,7 +14,7 @@
 <ul>
   @foreach(Show show in Model)
   {
-    <li>@Html.ActionLink($"{show.Venue}", "Details", new { id = show.ShowId }) - @Html.ActionLink($"{show.Date}", "Details", new { id = show.ShowId})</li>
+    <li>@Html.ActionLink($"{show.Venue}", "Details", new { id = show.ShowId }) - @Html.ActionLink($"{show.Date.Month}/{show.Date.Day}/{show.Date.Year}", "Details", new { id = show.ShowId})</li>
   }
 </ul>
 
