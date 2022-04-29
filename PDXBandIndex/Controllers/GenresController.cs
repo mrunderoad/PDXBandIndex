@@ -48,5 +48,28 @@ namespace PDXBandIndex.Controllers
       var thisGenre = _db.Genres.FirstOrDefault(genre => genre.GenreId == id);
       return View(thisGenre);
     }
+
+    [HttpPost]
+    public ActionResult Edit(Genre genre)
+    {
+      _db.Entry(genre).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Delete(int id)
+    {
+      var thisGenre = _db.Genres.FirstOrDefault(genre => genre.GenreId == id);
+      return View(thisGenre);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisGenre = _db.Genres.FirstOrDefault(genre => genre.GenreId == id);
+      _db.Genres.Remove(thisGenre);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }

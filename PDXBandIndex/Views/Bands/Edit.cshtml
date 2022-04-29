@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PDXBandIndex.Models
+@model PDXBandIndex.Models.Band
+<h2>Edit</h2>
+
+<h4>Edit this bands @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.BandId)
+
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+  <br>
+  
+  <input type="submit" value="Save" />
+}
+<p>@Html.ActionLink("Back to list", "Index")</p>

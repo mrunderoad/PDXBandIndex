@@ -17,7 +17,6 @@ namespace PDXBandIndex.Models
     public string Description { get; set; }
     public string Members { get; set; }
     public string Music { get; set; }
-    public bool Favorite { get; set; }
     public virtual ApplicationUser User { get; set; }
     public virtual ICollection<GenreBand> JoinEntities { get; }
     public virtual ICollection<BandShow> JoinEntities { get; }

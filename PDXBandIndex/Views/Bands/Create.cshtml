@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PDXBandIndex.Models.Band
+
+<h4>Add a new band</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+
+    @Html.LabelFor(model => model.Description)
+    @Html.TextBoxFor(model => model.Description)
+
+    @Html.LabelFor(model => model.Members)
+    @Html.TextBoxFor(model => model.Members)
+
+    @Html.LabelFor(model => model.Music)
+    @Html.TextBoxFor(model => model.Music)
+
+    <input type="submit" value="Add new band" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all bands", "Index")</p>

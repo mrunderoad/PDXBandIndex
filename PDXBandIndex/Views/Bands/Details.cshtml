@@ -1,0 +1,41 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PDXBandIndex.Models.Band
+
+<h2>Band Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This Band does not belong to any Genres</p>
+}
+else
+{
+  <h4>Genres the Band belongs to:</h4>
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <li>@join.Genre.Name</li>
+  }
+  </ul>
+}
+<hr />
+<ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    @* <li>@join.Category.Name</li> *@
+    @using (Html.BeginForm("DeleteGenre", "Bands"))
+    {
+      @Html.Hidden("joinId", @join.GenreBandId)
+      <input type="submit" value="Delete from @join.Genre.Name"/>
+    }
+  }
+  </ul>
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Edit Band", "Edit", new { id = Model.BandId })</p>
+<p>@Html.ActionLink("Delete Band", "Delete", new { id = Model.BandId })</p>
+<p>@Html.ActionLink("Add a Genre", "AddGenre", new { id = Model.BandId })</p>
