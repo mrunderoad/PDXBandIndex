@@ -31,3 +31,6 @@ _My minimum project purpose is for users to view bands and be able to favorite t
 
 ### _Anything Else_
 * _NA_
+
+
+#### Research in progress
