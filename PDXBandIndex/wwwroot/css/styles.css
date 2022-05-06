@@ -1,5 +1,6 @@
 body {
   background: linear-gradient(to bottom, rgb(159, 159, 159), white, rgb(161, 161, 161));
+  background-image: url(/img/bandSiteBackground.png);
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -24,7 +25,7 @@ div#header {
   left:0px;
   width:100%;
   color:#CCC;
-  background:#333;
+  background:rgb(0, 0, 0);
   padding:5px;
 }
 

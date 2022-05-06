@@ -4,6 +4,6 @@ namespace PDXBandIndex.Models
 {
   public class ApplicationUser : IdentityUser
   {
-    
+
   }
 }
