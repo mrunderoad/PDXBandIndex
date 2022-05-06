@@ -7,3 +7,58 @@
 <h1>Search For Bands, Genres or Shows!</h1>
 <p>Shows must be searched by Venue name.</p>
 <hr />
+
+<div class="search-box">
+  @using (Html.BeginForm())
+  {
+    @Html.TextBoxFor(model => model.Search)
+    <input type="submit" value="Search" />
+  }
+</div>
+<div class="row">
+  <div class="col-md-4">
+    @if (@ViewBag.Bands.Count == 0)
+    {
+      <h3>No Search Results Avalible for Bands.</h3>
+    }
+    else
+    {
+      <h3>Bands From Search:</h3>
+      <hr />
+      @foreach (var bands in ViewBag.Bands)
+      {
+        <li>@Html.ActionLink($"{bands.name}", "Details", "Bands", new { id = bands.BandId })</li>
+      }
+    }
+  </div>
+  <div class="col-md-4">
+    @if (@ViewBag.Genres.Count == 0)
+    {
+      <h3>idk yet</h3>
+    }
+    else
+    {
+      <h3>Genres From Search:</h3>
+      <hr />
+      @foreach (var genres in ViewBag.Genres)
+      {
+        <li>@Html.ActionLink($"{genres.Name}", "Index", "Genres")</li>
+      }
+    }
+  </div>
+  <div class="col-md-4">
+    @if (@ViewBag.Shows.Count == 0)
+    {
+      <h3>idk yet</h3>
+    }
+    else
+    {
+      <h3>Shows From Search:</h3>
+      <hr />
+      @foreach (var shows in ViewBag.Shows)
+      {
+        <li>@Html.ActionLink($"{shows.Venue}", "Details", "Shows", new { id = shows.ShowId })</li>
+      }
+    }
+  </div>
+</div>
