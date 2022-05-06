@@ -23,6 +23,7 @@
     <h3 class="upcoming">Upcoming Shows</h3>
     <hr />
     <div class="row">
+    
     @foreach (var shows in ViewBag.Shows) {
       <div class="card c1"><p>@Html.ActionLink($"{shows.Venue}", "Details", "Shows", new { id = shows.ShowId })</p><p>@Html.ActionLink($"{shows.Date.Month}", "Details", "Shows")/@Html.ActionLink($"{shows.Date.Day}", "Details", "Shows")/@Html.ActionLink($"{shows.Date.Year}", "Details", "Shows")</p></div>
     }

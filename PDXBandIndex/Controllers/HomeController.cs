@@ -25,7 +25,7 @@ namespace PDXBandIndex.Controllers
     {
       var bands = _db.Bands;
       ViewBag.Bands = bands;
-      var shows = _db.Shows;
+      var shows = _db.Shows.OrderBy(x => x.Date);
       ViewBag.Shows = shows.Take(6);
       return View();
     }
