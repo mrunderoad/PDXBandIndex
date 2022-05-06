@@ -97,3 +97,14 @@ hr {
   margin-left: 12px;
   margin-bottom: 12px;
 }
+
+.log-in-box {
+  padding: 30px;
+  width: 320px;
+  justify-content: center;
+  text-align: center;
+}
+
+.log-in-div {
+  border: #333;
+}

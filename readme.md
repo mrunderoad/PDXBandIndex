@@ -22,7 +22,7 @@ _description._
 ## Setup/Installation Requirements
 
 * _Make sure you have MySQL Workbench installed._
-* _Clone this repository to your desktop from `______`_
+* _Clone this repository to your desktop from `___  ___`_
 * _Navigate to the HairSalon directory in your terminal using `cd PDXBandIndex`._
 * _Inside the `PDXBandIndex` directory, add a new file named `appsettings.json`._
 * _Inside the `appsettings.json` file, add this code with your database, username and password in the specified places in the code._ 

@@ -29,5 +29,16 @@ namespace PDXBandIndex.Controllers
       ViewBag.Shows = shows;
       return View();
     }
+
+    public ActionResult Search(string Search)
+    {
+      var bands = _db.Bands.Where(band => band.Name.Contains(Search) || (band.Name == Search)).ToList();
+      var genres = _db.Genres.Where(genre => genre.Name.Contains(Search) || (genre.Name == Search)).ToList();
+      var shows = _db.Shows.Where(show => show.Venue.Contains(Search) || (show.Venue == Search)).ToList();
+      ViewBag.Bands = bands;
+      ViewBag.Genres = genres;
+      ViewBag.Shows = shows;
+      return View();
+    }
   }
 }
