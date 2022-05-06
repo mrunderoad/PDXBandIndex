@@ -74,7 +74,7 @@ hr {
   flex-wrap: wrap;
 }
 
-.welcome {
+.welcome, .allGenres {
   margin-bottom: 20px;
   text-shadow: 2px 2px 2px white;
 }
@@ -108,4 +108,66 @@ hr {
 
 .log-in-div {
   border: #333;
+}
+
+.genres {
+  float: left;
+}
+
+.genres {
+  border: none;
+  padding: 5px;
+  width: 200px;
+  height: 500px;
+  overflow: scroll;
+  }
+  
+  /* Scrollbar styles */
+  ::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+  /* border: 1px solid rgb(205, 63, 50); */
+  border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+  background: rgb(50, 205, 135);  
+  border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(50, 205, 135);   
+  }
+
+.no-genre {
+  float: right;
+}
+
+.col6 {
+  border: none;
+}
+
+.col4 {
+  border-left: #333 3px solid;
+}
+
+.col4right {
+  border-right: #333 3px solid;
+}
+
+.options {
+  background-color: rgb(0, 255, 183);
+  border-radius: 5px;
+}
+
+a {
+  color: rgb(0, 0, 0);
+  text-shadow: .5px .5px red;
+}
+
+.date {
+  margin-left: 370px;
 }

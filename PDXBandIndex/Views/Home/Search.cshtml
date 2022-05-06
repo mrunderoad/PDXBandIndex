@@ -15,8 +15,9 @@
     <input type="submit" value="Search" />
   }
 </div>
+<br>
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-4 col4">
     @if (@ViewBag.Bands.Count == 0)
     {
       <h3>No Search Results Avalible for Bands.</h3>
@@ -31,10 +32,10 @@
       }
     }
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col4">
     @if (@ViewBag.Genres.Count == 0)
     {
-      <h3>idk yet</h3>
+      <h3>No Search Results Avalible for Genres.</h3>
     }
     else
     {
@@ -46,10 +47,10 @@
       }
     }
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col4 col4right">
     @if (@ViewBag.Shows.Count == 0)
     {
-      <h3>idk yet</h3>
+      <h3>No Search Results Avalible for Shows.</h3>
     }
     else
     {

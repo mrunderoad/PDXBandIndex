@@ -10,13 +10,13 @@
 <div class="row">
   <div class="col-md-3">
     <hr />
-    <button>@Html.ActionLink("Check out the Bands", "Index", "Bands")</button>
+    <button class="options">@Html.ActionLink("🎙️Check out the Bands🎙️", "Index", "Bands")</button>
     <hr /> 
-    <button>@Html.ActionLink("See all Genres", "Index", "Genres")</button>
+    <button class="options">@Html.ActionLink("🎸See all Genres🎸", "Index", "Genres")</button>
     <hr />
-    <button>@Html.ActionLink("Check for Shows", "Index", "Shows")</button>
+    <button class="options">@Html.ActionLink("🥁Check for Shows🥁", "Index", "Shows")</button>
     <hr />
-    <button>@Html.ActionLink("🔍Search🔍", "Search", "Home")</button>
+    <button class="options">@Html.ActionLink("🔍Search🔍", "Search", "Home")</button>
     <hr />
   </div>
   <div class="col-md-6 middle">
@@ -49,8 +49,13 @@
 <div class="card c2">
   <h3>Check these bands out!</h3>
   <div class="row">
-    @foreach (var bands in ViewBag.Bands) {
+    @* @foreach (var bands in ViewBag.Bands) {
       <div class="card c3">
+        <p>@Html.ActionLink($"{bands.Name}", "Details", "Bands", new { id = bands.BandId })</p>
+      </div>
+    } *@
+    @foreach (var bands in ViewBag.Bands) {
+      <div class="card c3" aspli@Html.ActionLink($"{bands.Name}", "Details", "Bands", new { id = bands.BandId })>
         <p>@Html.ActionLink($"{bands.Name}", "Details", "Bands", new { id = bands.BandId })</p>
       </div>
     }
