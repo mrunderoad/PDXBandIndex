@@ -27,7 +27,7 @@
       <hr />
       @foreach (var bands in ViewBag.Bands)
       {
-        <li>@Html.ActionLink($"{bands.name}", "Details", "Bands", new { id = bands.BandId })</li>
+        <li>@Html.ActionLink($"{bands.Name}", "Details", "Bands", new { id = bands.BandId })</li>
       }
     }
   </div>
