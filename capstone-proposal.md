@@ -35,3 +35,4 @@ _My minimum project purpose is for users to view bands and be able to favorite t
 
 #### Research in progress
 * _still researching login roles_
+* _also researching deleting rows from mysql after show date has passed_
