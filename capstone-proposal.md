@@ -16,12 +16,14 @@ _My minimum project purpose is for users to view bands and be able to favorite t
 * _Razor Links_
 * _HTML_
 * _Identity_
+* _Entity Framework_
 
 ### _Stretch Goals:_
 * _Google locations for venue information_
 * _Can add venues and view venue page_
 * _Shows auto delete after show has happened_
 * _User gets alerted about upcoming show_
+* _Featured band on home index_
 
 ### _Stretch Goal Tools:_
 * _NA_
