@@ -77,7 +77,7 @@ namespace PDXBandIndex.Controllers
     public ActionResult DeleteOldShow(int id)
     {
       var showToRemove = _db.Shows.FirstOrDefault(show => show.ShowId == id);
-      if (showToRemove.Date > System.DateTime.Today)
+      if (showToRemove.Date > System.DateTime.Now)
       {
         _db.Shows.Remove(showToRemove);
         _db.SaveChanges();

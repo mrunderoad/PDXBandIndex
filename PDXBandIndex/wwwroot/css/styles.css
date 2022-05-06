@@ -40,7 +40,8 @@ div#header {
 }
 
 .col-md-3, .col-md-6 {
-  border: #333 2px solid;
+  border-left: #333 2px solid;
+  border-right: #333 2px solid;
   height: auto;
   text-align: center;
   justify-content: center;
@@ -68,6 +69,7 @@ hr {
   padding-right: 7px;
   margin-left: 12px;
   margin-bottom: 12px;
+  border: 5px green inset;
 }
 
 .row {
@@ -85,7 +87,6 @@ hr {
 
 .c2 {
   background-color: rgba(128, 128, 128, 0.459);
-  border: 2px black solid;
   margin-top: 25px;
   flex-wrap: wrap;
   padding-left: 30px;
