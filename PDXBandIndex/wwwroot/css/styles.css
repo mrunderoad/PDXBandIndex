@@ -34,9 +34,15 @@ div#header {
   margin-top: 8px;
 }
 
+.header-btns {
+  color: blue;
+  background-color: gray;
+  border-radius: 5px;
+}
+
 .log-btn {
   /* margin-left: 2vw; */
-  float: right;
+  margin-top: 8px;
 }
 
 .col-md-3, .col-md-6 {
@@ -107,8 +113,7 @@ hr {
 .log-in-box {
   padding: 30px;
   width: 320px;
-  justify-content: center;
-  text-align: center;
+  margin-left: 36%;
 }
 
 .log-in-div {

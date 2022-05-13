@@ -50,8 +50,7 @@ namespace PDXBandIndex.Controllers
         _db.Shows.Remove(showToRemove);
         _db.SaveChanges();
       }
-      // return RedirectToAction("Index");
-      return View();
+      return RedirectToAction("Index");
     }
   }
 }

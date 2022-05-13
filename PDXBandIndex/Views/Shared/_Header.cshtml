@@ -4,14 +4,14 @@
   <div class="container">
     <div class="row">
       <h2 class="logo-text">PDX Band Index</h2>
-      <h5 class="home-btn">@Html.ActionLink("Home", "Index", "Home")</h5>
+      <button class="home-btn header-btns">@Html.ActionLink("Home", "Index", "Home")</button>
       @if (User.Identity.IsAuthenticated) {
-        <h5 class="log-btn">@Html.ActionLink("Log Out", "Index", "Account")</h5>
-        <h5 class="log-btn">@Html.ActionLink("Shows", "Index", "Shows")</h5>
+        <button class="log-btn header-btns">@Html.ActionLink("Log Out", "Index", "Account")</button>
+        <button class="log-btn header-btns">@Html.ActionLink("Shows", "Index", "Shows")</button>
       } 
       else
       {
-        <h5 class="log-btn">@Html.ActionLink("Log In", "Index", "Account")</h5>
+        <button class="log-btn header-btns">@Html.ActionLink("Log In", "Index", "Account")</button>
       }
     </div>
   </div> 

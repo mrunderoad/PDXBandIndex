@@ -12,10 +12,10 @@
   <div class="card log-in-box">
     @using (Html.BeginForm())
     {
-      @Html.LabelFor(m => m.Email)
+      <h4>Email</h4>
       @Html.TextBoxFor(m => m.Email)
       <br>
-      @Html.LabelFor(m => m.Password)
+      <h4>Password</h4>
       @Html.PasswordFor(m => m.Password)
       <br>
       <input type="submit" value="Log in" class="btn btn-default" />
