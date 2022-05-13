@@ -37,3 +37,4 @@ _My minimum project purpose is for users to view bands and be able to favorite t
 * _still researching login roles_
 * _also researching deleting rows from mysql after show date has passed_
 * _research commit_
+* _EOD Research commit_
