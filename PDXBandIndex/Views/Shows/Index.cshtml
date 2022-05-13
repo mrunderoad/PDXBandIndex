@@ -5,6 +5,7 @@
 @using PDXBandIndex.Models;
 @model List<PDXBandIndex.Models.Show>;
 
+<p><strong>See Today's Shows On The Home Page!</strong></p>
 <div class="row">
   <div class="col-md-6">
     <h1>Upcoming Shows!</h1>
@@ -22,7 +23,7 @@
           <li>@Html.ActionLink($"{Model[i].Venue}", "Details", new { id = Model[i].ShowId }) - @Html.ActionLink($"{Model[i].Date.Month}/{Model[i].Date.Day}/{Model[i].Date.Year}", "Details", new { id = Model[i].ShowId})
           <br>
           @* @Html.CheckBoxFor(x => x[i].Favorite) *@
-          <input type="submit" value="Favorite" /> 
+          <input type="submit" value="Fav" /> 
           <hr />
           </li>
         }
@@ -33,10 +34,10 @@
   <div class="col-md-6">
     <h1>Favorited Shows!</h1>
     <hr />
-    @foreach (var Favorite in Model)
+    @* @foreach (var shows in ViewBag.Shows)
     {
-      <li>@Html.ActionLink($"{Favorite.Venue}", "Details", new { id = Favorite.ShowId })</li>
-    }
+      <li>@Html.ActionLink($"{shows.Venue}", "Details", new { id = shows.ShowId })</li>
+    } *@
 
   </div>
 </div>  

@@ -47,11 +47,17 @@
   </div>
 </div>
 <div class="card c2">
-  <h3>This Site Creators Band!</h3>
-  <div class="row">
+  <h3>This Site Creators Bands!</h3>
+  <div class="row myBands">
     @foreach (var bands in ViewBag.Bands) {
-      <div class="card c3">
-        <p>@Html.ActionLink($"{bands.Name}", "Details", "Bands", new { id = bands.BandId })</p>
+      <div class="c3">
+        <p>@Html.ActionLink($"{bands.Name}", "Details", "Bands", new { id = bands.BandId }) & Cranefist!</p>
+      </div>
+      <div class="col-md-6 myBands">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/5FtKVf1rasGlo4D7egBc6t?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      </div>
+      <div class="col-md-6 myBands">
+        <iframe style="border: 0; width: 100%; height: 380px;" src="https://bandcamp.com/EmbeddedPlayer/track=2732492770/size=large/bgcol=333333/linkcol=e32c14/minimal=true/transparent=true/" seamless><a href="https://cranefistband.bandcamp.com/track/parents">Parents by Cranefist</a></iframe>
       </div>
     }
   </div>

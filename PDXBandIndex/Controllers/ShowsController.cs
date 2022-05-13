@@ -19,9 +19,7 @@ namespace PDXBandIndex.Controllers
 
     public ActionResult Index()
     {
-      List<Show> model = _db.Shows.ToList();
-      // var shows = model.OrderBy(x => x.Date);
-      // _db.Shows.OrderBy(x => x.Date);
+      List<Show> model = _db.Shows.OrderBy(show => show.Date).Where(show => show.Date > System.DateTime.Today.AddDays(1)).ToList();
       return View(model);
     }
 

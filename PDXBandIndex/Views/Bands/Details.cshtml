@@ -10,7 +10,7 @@
   <div class="col-md-4">
     <h3>@Html.DisplayNameFor(model => model.Description):</h3> <p>@Html.DisplayFor(model => model.Description)</p>
     <h3>@Html.DisplayNameFor(model => model.Members):</h3> <p>@Html.DisplayFor(model => model.Members)</p>
-    <h3>@Html.DisplayNameFor(model => model.Music):</h3> <a href="@Html.DisplayFor(model => model.Music)">Link To Music</a>
+    <h3>@Html.DisplayNameFor(model => model.Music):</h3><a href="@Html.DisplayFor(model => model.Music)">Link @Html.DisplayFor(model => model.Name)'s Music!</a> 
     <hr />
   </div>
   <div class="col-md-4">
@@ -20,7 +20,7 @@
     }
     else
     {
-      <h4><em>Genres</em> for @Html.DisplayFor(model => model.Name)</h4>
+      <h4><em>Genres</em> for <strong>@Html.DisplayFor(model => model.Name)</strong></h4>
       <ul>
       @foreach(var join in Model.JoinEntities)
       {
@@ -38,12 +38,10 @@
     else
     {
       <h4><em>Shows</em> @Html.DisplayFor(model => model.Name) is playing</h4>
-      <ul>
       @foreach(var join in Model.JoinEntities2)
       {
         <p>@join.Show.Venue</p>
       }
-      </ul>
     }
     <hr />
     <ul>

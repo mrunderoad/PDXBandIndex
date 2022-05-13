@@ -27,6 +27,7 @@ div#header {
   color:#CCC;
   background:rgb(0, 0, 0);
   padding:5px;
+  z-index: 1;
 }
 
 .home-btn {
@@ -78,13 +79,14 @@ hr {
   height: 300px;
   padding-left: 7px;
   padding-right: 7px;
-  margin-left: 12px;
+  margin-left: 19px;
   margin-bottom: 12px;
   border: 5px green inset;
   background-image: url("https://i.insider.com/5e45b2783b62b778762710a4?width=700");
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .today-shows {
   padding-top: 35px;
   width: 240px;
@@ -123,8 +125,10 @@ hr {
 
 .c3 {
   padding: 5px;
-  margin-left: 12px;
-  margin-bottom: 12px;
+  margin-left: 400px;
+  margin-bottom: 5px;
+  font-size: 25px;
+  color: black;
 }
 
 .log-in-box {
@@ -210,5 +214,10 @@ a {
 
 .date {
   margin-left: 370px;
+}
+
+.myBands {
+  border: rgba(255, 0, 0, 0);
+  text-align: center;
 }
 
