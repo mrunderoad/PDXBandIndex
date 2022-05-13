@@ -4,52 +4,61 @@
 
 @model PDXBandIndex.Models.Band
 
-<h2>@Html.DisplayFor(model => model.Name)</h2>
+<h1><strong>@Html.DisplayFor(model => model.Name)</strong></h1>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
-<h3>@Html.DisplayNameFor(model => model.Members): @Html.DisplayFor(model => model.Members)</h3>
-<h3>@Html.DisplayNameFor(model => model.Music): <a></a></h3>
-
-@if(@Model.JoinEntities.Count == 0)
-{
-  <p>@Html.DisplayFor(model => model.Name) is not assigned to any Genres yet!</p>
-}
-else
-{
-  <h4>Genres for @Html.DisplayFor(model => model.Name)</h4>
-  <ul>
-  @foreach(var join in Model.JoinEntities)
-  {
-    <li>@join.Genre.Name</li>
-  }
-  </ul>
-}
-@if(@Model.JoinEntities2.Count == 0)
-{
-  <p>@Html.DisplayFor(model => model.Name) has no upcoming shows.</p>
-}
-else
-{
-  <h4>Shows @Html.DisplayFor(model => model.Name) is playing</h4>
-  <ul>
-  @foreach(var join in Model.JoinEntities2)
-  {
-    <li>@join.Show.Venue</li>
-  }
-  </ul>
-}
-<hr />
-<ul>
-  @foreach(var join in Model.JoinEntities)
-  {
-    @* <li>@join.Category.Name</li> *@
-    @using (Html.BeginForm("DeleteGenre", "Bands"))
+<div class="row">
+  <div class="col-md-4">
+    <h3>@Html.DisplayNameFor(model => model.Description):</h3> <p>@Html.DisplayFor(model => model.Description)</p>
+    <h3>@Html.DisplayNameFor(model => model.Members):</h3> <p>@Html.DisplayFor(model => model.Members)</p>
+    <h3>@Html.DisplayNameFor(model => model.Music):</h3> <a href="@Html.DisplayFor(model => model.Music)">Link To Music</a>
+    <hr />
+  </div>
+  <div class="col-md-4">
+    @if(@Model.JoinEntities.Count == 0)
     {
-      @Html.Hidden("joinId", @join.GenreBandId)
-      <input type="submit" value="Delete from @join.Genre.Name"/>
+      <p>@Html.DisplayFor(model => model.Name) is not assigned to any Genres yet!</p>
     }
-  }
-</ul>
+    else
+    {
+      <h4><em>Genres</em> for @Html.DisplayFor(model => model.Name)</h4>
+      <ul>
+      @foreach(var join in Model.JoinEntities)
+      {
+        <p>@join.Genre.Name</p>
+      }
+      </ul>
+    }
+    <hr />
+  </div>
+  <div class="col-md-4">
+    @if(@Model.JoinEntities2.Count == 0)
+    {
+      <p>@Html.DisplayFor(model => model.Name) has no upcoming shows.</p>
+    }
+    else
+    {
+      <h4><em>Shows</em> @Html.DisplayFor(model => model.Name) is playing</h4>
+      <ul>
+      @foreach(var join in Model.JoinEntities2)
+      {
+        <p>@join.Show.Venue</p>
+      }
+      </ul>
+    }
+    <hr />
+    <ul>
+      @foreach(var join in Model.JoinEntities)
+      {
+        @* <li>@join.Category.Name</li> *@
+        @using (Html.BeginForm("DeleteGenre", "Bands"))
+        {
+          @Html.Hidden("joinId", @join.GenreBandId)
+          <input type="submit" value="Delete from @join.Genre.Name"/>
+        }
+      }
+    </ul>
+  </div>
+</div>
 
 <p>@Html.ActionLink("Back to list", "Index")</p>
 <p>@Html.ActionLink("Edit Band", "Edit", new { id = Model.BandId })</p>
