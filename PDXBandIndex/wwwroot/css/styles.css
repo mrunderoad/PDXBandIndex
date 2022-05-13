@@ -20,7 +20,7 @@ div#footer {
 }
 
 div#header {
-  position:fixed;
+  position: fixed;
   top:0px;
   left:0px;
   width:100%;
@@ -70,11 +70,23 @@ hr {
 }
  
 .c1 {
-  width: 265px;
+  width: 255px;
   height: 300px;
   padding-left: 7px;
   padding-right: 7px;
   margin-left: 12px;
+  margin-bottom: 12px;
+  border: 5px green inset;
+  background-image: url("https://i.insider.com/5e45b2783b62b778762710a4?width=700");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.today-shows {
+  width: 240px;
+  height: 300px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-left: 1px;
   margin-bottom: 12px;
   border: 5px green inset;
   background-image: url("https://i.insider.com/5e45b2783b62b778762710a4?width=700");
@@ -124,13 +136,20 @@ hr {
   float: left;
 }
 
-.genres {
+.genres{
   border: none;
   padding: 5px;
   width: 200px;
   height: 500px;
   overflow: scroll;
-  }
+}
+
+.today {
+  border: none;
+  width: 265px;
+  height: 310px;
+  overflow: scroll;
+}
   
   /* Scrollbar styles */
   ::-webkit-scrollbar {
@@ -181,3 +200,4 @@ a {
 .date {
   margin-left: 370px;
 }
+

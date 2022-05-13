@@ -27,32 +27,18 @@
       <div class="card c1"><p>@Html.ActionLink($"{shows.Venue}", "Details", "Shows", new { id = shows.ShowId })</p>
       <p>@Html.ActionLink($"{shows.Date.Month}", "Details", "Shows")/@Html.ActionLink($"{shows.Date.Day}", "Details", "Shows")/@Html.ActionLink($"{shows.Date.Year}", "Details", "Shows")</p></div>
     }
-    @using (Html.BeginForm())
-    {
-      <input type="submit" value="Update" />
-    }
     </div>
   </div>
   <div class="col-md-3">
-    @if (User.Identity.IsAuthenticated)
-    {
-      <p>Hello @User.Identity.Name!</p>
-      <hr />
-      <p>Welcome to the PDX Band Index website. Made by Isaac Overstreet as the last independent project for the Epicodus Coding Bootcamp.</p>
-      <hr />
-      <p><em>Rock On!</em></p>
-      
-    }
-    else
-    {
-      <p>@Html.ActionLink("Register", "Register", "Account")</p>
-      <p>@Html.ActionLink("Log in", "Login", "Account")</p>
-    }
-    @* @foreach (var shows in ViewBag.Shows.DateTime.Today)
-    {
-      <div class="card c1"><p>@Html.ActionLink($"{shows.Venue}", "Details", "Shows", new { id = shows.ShowId })</p>
-      <p>@Html.ActionLink($"{shows.Date.Month}", "Details", "Shows")/@Html.ActionLink($"{shows.Date.Day}", "Details", "Shows")/@Html.ActionLink($"{shows.Date.Year}", "Details", "Shows")</p></div>
-    } *@
+    <h3 class="upcoming">Shows Today!</h3>
+    <hr />
+    <div class="today">
+      @foreach (var shows in ViewBag.TodayShows)
+      {
+        <div class="card today-shows"><p>@Html.ActionLink($"{shows.Venue}", "Details", "Shows", new { id = shows.ShowId })</p>
+        <p>@Html.ActionLink($"{shows.Date.Month}", "Details", "Shows")/@Html.ActionLink($"{shows.Date.Day}", "Details", "Shows")/@Html.ActionLink($"{shows.Date.Year}", "Details", "Shows")</p></div>
+      }
+    </div>
   </div>
 </div>
 <div class="card c2">

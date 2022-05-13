@@ -25,8 +25,10 @@ namespace PDXBandIndex.Controllers
     {
       var bands = _db.Bands;
       ViewBag.Bands = bands;
-      var shows = _db.Shows.OrderBy(x => x.Date).Where(y => y.Date >= System.DateTime.Today.AddDays(1));
+      var shows = _db.Shows.OrderBy(x => x.Date).Where(y => y.Date >= System.DateTime.Now.AddDays(1));
       ViewBag.Shows = shows.Take(2);
+      var todayShows = _db.Shows.Where(x => x.Date == System.DateTime.Today);
+      ViewBag.TodayShows = todayShows;
       return View();
     }
 
