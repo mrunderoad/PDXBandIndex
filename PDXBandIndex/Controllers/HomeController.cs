@@ -25,7 +25,7 @@ namespace PDXBandIndex.Controllers
     {
       var bands = _db.Bands;
       ViewBag.Bands = bands;
-      var shows = _db.Shows.OrderBy(x => x.Date);
+      var shows = _db.Shows.OrderBy(x => x.Date).Where(y => y.Date >= System.DateTime.Today.AddDays(1));
       ViewBag.Shows = shows.Take(2);
       return View();
     }
@@ -39,18 +39,6 @@ namespace PDXBandIndex.Controllers
       ViewBag.Genres = genres;
       ViewBag.Shows = shows;
       return View();
-    }
-
-    [HttpPatch, ActionName("Update")]
-    public ActionResult RemoveOldShow(int id)
-    {
-      var showToRemove = _db.Shows.FirstOrDefault(show => show.ShowId == id);
-      if (showToRemove.Date > System.DateTime.Now)
-      {
-        _db.Shows.Remove(showToRemove);
-        _db.SaveChanges();
-      }
-      return RedirectToAction("Index");
     }
   }
 }

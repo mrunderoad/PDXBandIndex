@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using PDXBandIndex.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace PDXBandIndex.Controllers
 {
@@ -19,6 +20,8 @@ namespace PDXBandIndex.Controllers
     public ActionResult Index()
     {
       List<Show> model = _db.Shows.ToList();
+      // var shows = model.OrderBy(x => x.Date);
+      // _db.Shows.OrderBy(x => x.Date);
       return View(model);
     }
 
