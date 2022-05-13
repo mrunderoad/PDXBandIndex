@@ -26,10 +26,12 @@ namespace PDXBandIndex.Controllers
 
     public async Task<ActionResult> Index()
     {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-      var userBands = _db.Bands.Where(entry => entry.User.Id == currentUser.Id).ToList();
-      return View(userBands);
+      // var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      // var currentUser = await _userManager.FindByIdAsync(userId);
+      // var userBands = _db.Bands.Where(entry => entry.User.Id == currentUser.Id).ToList();
+      // return View(userBands);
+      var bands = _db.Bands;
+      return View(bands);
     }
 
     public ActionResult Create()
