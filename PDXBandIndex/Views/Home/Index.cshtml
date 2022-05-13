@@ -27,6 +27,10 @@
       <div class="card c1"><p>@Html.ActionLink($"{shows.Venue}", "Details", "Shows", new { id = shows.ShowId })</p>
       <p>@Html.ActionLink($"{shows.Date.Month}", "Details", "Shows")/@Html.ActionLink($"{shows.Date.Day}", "Details", "Shows")/@Html.ActionLink($"{shows.Date.Year}", "Details", "Shows")</p></div>
     }
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value="Update" />
+    }
     </div>
   </div>
   <div class="col-md-3">

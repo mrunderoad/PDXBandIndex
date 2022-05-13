@@ -40,5 +40,18 @@ namespace PDXBandIndex.Controllers
       ViewBag.Shows = shows;
       return View();
     }
+
+    [HttpPatch, ActionName("Update")]
+    public ActionResult RemoveOldShow(int id)
+    {
+      var showToRemove = _db.Shows.FirstOrDefault(show => show.ShowId == id);
+      if (showToRemove.Date > System.DateTime.Now)
+      {
+        _db.Shows.Remove(showToRemove);
+        _db.SaveChanges();
+      }
+      // return RedirectToAction("Index");
+      return View();
+    }
   }
 }

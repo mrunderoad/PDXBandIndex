@@ -74,15 +74,15 @@ namespace PDXBandIndex.Controllers
       return RedirectToAction("Index");
     }
 
-    public ActionResult DeleteOldShow(int id)
-    {
-      var showToRemove = _db.Shows.FirstOrDefault(show => show.ShowId == id);
-      if (showToRemove.Date > System.DateTime.Now)
-      {
-        _db.Shows.Remove(showToRemove);
-        _db.SaveChanges();
-      }
-      return View();
-    }
+    // public ActionResult DeleteOldShow(int id)
+    // {
+    //   var showToRemove = _db.Shows.FirstOrDefault(show => show.ShowId == id);
+    //   if (showToRemove.Date > System.DateTime.Now)
+    //   {
+    //     _db.Shows.Remove(showToRemove);
+    //     _db.SaveChanges();
+    //   }
+    //   return View();
+    // }
   }
 }
