@@ -24,13 +24,8 @@ else
   }
   </ul>
 }
-@using (Html.BeginForm())
-{
-  <p>Click the circle then the button to add to favorites!</p>
-  @Html.HiddenFor(model => model.Favorite, true)
-  <input type="submit" value="Add To Favorites">
-}
 
+<p>@Html.ActionLink("Favorite this show", "Favorite", new { id = Model.ShowId })</p>
 <p>@Html.ActionLink("Back to shows", "Index")</p>
 <p>@Html.ActionLink("Edit show", "Edit", new { id = Model.ShowId })</p>
 <p>@Html.ActionLink("Delete show", "Delete", new { id = Model.ShowId })</p>

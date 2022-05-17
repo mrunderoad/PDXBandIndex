@@ -56,14 +56,6 @@ namespace PDXBandIndex.Controllers
       return View(thisShow);
     }
 
-    [HttpPost]
-    public ActionResult Details(Show show)
-    {
-      _db.Entry(show).State = EntityState.Modified;
-      _db.SaveChanges();
-      return RedirectToAction("Details");
-    }
-
     public ActionResult Edit(int id)
     {
       var thisShow = _db.Shows.FirstOrDefault(show => show.ShowId == id);
@@ -90,6 +82,20 @@ namespace PDXBandIndex.Controllers
     {
       var thisShow = _db.Shows.FirstOrDefault(show => show.ShowId == id);
       _db.Shows.Remove(thisShow);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Favorite(int id)
+    {
+      var thisShow = _db.Shows.FirstOrDefault(show => show.ShowId == id);
+      return View(thisShow);
+    }
+
+    [HttpPost]
+    public ActionResult Favorite(Show show)
+    {
+      _db.Entry(show).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

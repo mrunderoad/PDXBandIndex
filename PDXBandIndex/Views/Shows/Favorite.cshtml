@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PDXBandIndex.Models.Show;
+
+<h1>Favorite @Html.DisplayFor(model => model.Venue)</h1>
+<p>@Html.DisplayNameFor(model => model.Date): @Html.DisplayFor(model => model.Date.Month)/@Html.DisplayFor(model => model.Date.Day)/@Html.DisplayFor(model => model.Date.Year)</p>
+
+@using (Html.BeginForm())
+{
+<input type="submit" value="Add Favorite" name="Favorite" data="true">
+}
