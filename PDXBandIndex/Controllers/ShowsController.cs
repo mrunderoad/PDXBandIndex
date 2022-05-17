@@ -25,14 +25,13 @@ namespace PDXBandIndex.Controllers
       return View(model);
     }
 
-    // [HttpPost]
-    // public ActionResult Index(Show show, int id)
-    // {
-    //   var thisShow = _db.Shows.FirstOrDefault(show => show.ShowId == id);
-    //   _db.Entry(thisShow).State = EntityState.Modified;
-    //   _db.SaveChanges();
-    //   return RedirectToAction("Index");
-    // }
+    [HttpPost]
+    public ActionResult Index(Show show)
+    {
+      _db.Entry(show).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
     public ActionResult Create()
     {

@@ -9,5 +9,11 @@
 
 @using (Html.BeginForm())
 {
-<input type="submit" value="Add Favorite" name="Favorite" data="true">
+@Html.HiddenFor(model => model.ShowId)
+@Html.HiddenFor(model => model.Venue, new { htmlAttributes = new { @readonly = "readonly" } })
+@Html.HiddenFor(model => model.Info, new { htmlAttributes = new { @readonly = "readonly" } })
+@Html.HiddenFor(model => model.Date, new { htmlAttributes = new { @readonly = "readonly" } })
+@Html.HiddenFor(model => model.Time, new { type = "time", htmlAttributes = new { @readonly = "readonly" }  })
+<input type="checkbox" name="Favorite" value="true" checked>
+<button type="submit">Favorite!</button>
 }

@@ -22,12 +22,17 @@
         {
           <li>@Html.ActionLink($"{Model[i].Venue}", "Details", new { id = Model[i].ShowId }) - @Html.ActionLink($"{Model[i].Date.Month}/{Model[i].Date.Day}/{Model[i].Date.Year}", "Details", new { id = Model[i].ShowId})
           <br>
-          @Html.CheckBoxFor(x => x[i].Favorite, "1")
+          @Html.HiddenFor(Model => Model[i].ShowId)
+          @Html.HiddenFor(Model => Model[i].Venue, new { htmlAttributes = new { @readonly = "readonly" } })
+          @Html.HiddenFor(Model => Model[i].Info, new { htmlAttributes = new { @readonly = "readonly" } })
+          @Html.HiddenFor(Model => Model[i].Date, new { htmlAttributes = new { @readonly = "readonly" } })
+          @Html.HiddenFor(Model => Model[i].Time, new { type = "time", htmlAttributes = new { @readonly = "readonly" }  })
+          <input type="checkbox" name="Favorite" value="true">
           <hr />
           </li>
         }
       </div>
-      <input type="submit" value="Favorite" /> 
+      <input type="submit" value="Favorite" />
       }
     </ul>
   </div>
