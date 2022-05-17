@@ -22,7 +22,7 @@
         {
           <li>@Html.ActionLink($"{Model[i].Venue}", "Details", new { id = Model[i].ShowId }) - @Html.ActionLink($"{Model[i].Date.Month}/{Model[i].Date.Day}/{Model[i].Date.Year}", "Details", new { id = Model[i].ShowId})
           <br>
-          @Html.EditorFor(x => x[i].Favorite, "true")
+          @Html.CheckBoxFor(x => x[i].Favorite, "1")
           <hr />
           </li>
         }

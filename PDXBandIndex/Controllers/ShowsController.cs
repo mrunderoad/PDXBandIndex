@@ -20,13 +20,19 @@ namespace PDXBandIndex.Controllers
     public ActionResult Index(bool Favorite, int id)
     {
       List<Show> model = _db.Shows.OrderBy(show => show.Date).Where(show => show.Date > System.DateTime.Today.AddDays(1)).ToList();
-      var thisShow = _db.Shows;
-      _db.Entry(thisShow).State = EntityState.Modified;
-      _db.SaveChanges();
       var favShows = _db.Shows.Where(thisShow => thisShow.Favorite == true);
       ViewBag.Shows = favShows;
       return View(model);
     }
+
+    // [HttpPost]
+    // public ActionResult Index(Show show, int id)
+    // {
+    //   var thisShow = _db.Shows.FirstOrDefault(show => show.ShowId == id);
+    //   _db.Entry(thisShow).State = EntityState.Modified;
+    //   _db.SaveChanges();
+    //   return RedirectToAction("Index");
+    // }
 
     public ActionResult Create()
     {
@@ -48,6 +54,14 @@ namespace PDXBandIndex.Controllers
           .ThenInclude(join => join.Band)
           .FirstOrDefault(show => show.ShowId == id);
       return View(thisShow);
+    }
+
+    [HttpPost]
+    public ActionResult Details(Show show)
+    {
+      _db.Entry(show).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Details");
     }
 
     public ActionResult Edit(int id)
