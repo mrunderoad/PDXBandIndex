@@ -17,9 +17,11 @@ namespace PDXBandIndex.Controllers
       _db = db;
     }
 
-    public ActionResult Index()
+    public ActionResult Index(string Favorite)
     {
       List<Show> model = _db.Shows.OrderBy(show => show.Date).Where(show => show.Date > System.DateTime.Today.AddDays(1)).ToList();
+      var favShows = _db.Shows.Where(show => show.Favorite == true);
+      ViewBag.Shows = favShows;
       return View(model);
     }
 
@@ -74,16 +76,5 @@ namespace PDXBandIndex.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
-    // public ActionResult DeleteOldShow(int id)
-    // {
-    //   var showToRemove = _db.Shows.FirstOrDefault(show => show.ShowId == id);
-    //   if (showToRemove.Date > System.DateTime.Now)
-    //   {
-    //     _db.Shows.Remove(showToRemove);
-    //     _db.SaveChanges();
-    //   }
-    //   return View();
-    // }
   }
 }
