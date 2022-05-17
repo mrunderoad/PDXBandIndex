@@ -4,6 +4,7 @@
 
 @using PDXBandIndex.Models;
 @model List<PDXBandIndex.Models.Show>;
+@* @model PDXBandIndex.Models.Show; *@
 
 <p><strong>See Today's Shows On The Home Page!</strong></p>
 <div class="row">
@@ -20,13 +21,14 @@
       <div class="upcomingShows">
         @for(int i = 0; i < Model.Count; i++)
         {
-          <li>@Html.ActionLink($"{Model[i].Venue}", "Details", new { id = Model[i].ShowId }) - @Html.ActionLink($"{Model[i].Date.Month}/{Model[i].Date.Day}/{Model[i].Date.Year}", "Details", new { id = Model[i].ShowId})
+          <li>@Html.ActionLink($"{Model[i].Venue}", "Details", new { id = Model[i].ShowId }) - @Html.ActionLink($"{Model[i].Date.Month}/{Model[i].Date.Day}/{Model[i].Date.Year}", "Details", new { id = Model[i].ShowId}) @Html.DisplayFor(Model => Model[i].ShowId)
           <br>
+          @Html.DisplayFor(Model => Model[i].Time, new { htmlAttributes = new { type = "time" }})
           @Html.HiddenFor(Model => Model[i].ShowId)
           @Html.HiddenFor(Model => Model[i].Venue, new { htmlAttributes = new { @readonly = "readonly" } })
           @Html.HiddenFor(Model => Model[i].Info, new { htmlAttributes = new { @readonly = "readonly" } })
           @Html.HiddenFor(Model => Model[i].Date, new { htmlAttributes = new { @readonly = "readonly" } })
-          @Html.HiddenFor(Model => Model[i].Time, new { type = "time", htmlAttributes = new { @readonly = "readonly" }  })
+          @Html.HiddenFor(Model => Model[i].Time, new { htmlAttributes = new { @readonly = "readonly" }  })
           <input type="checkbox" name="Favorite" value="true">
           <hr />
           </li>
@@ -34,6 +36,18 @@
       </div>
       <input type="submit" value="Favorite" />
       }
+      @* @using (Html.BeginForm())
+      {
+        @foreach (Show show in Model)
+        {
+          @Html.HiddenFor(model => model.ShowId)
+          @Html.HiddenFor(model => model.Venue, new { htmlAttributes = new { @readonly = "readonly" } })
+          @Html.HiddenFor(model => model.Info, new { htmlAttributes = new { @readonly = "readonly" } })
+          @Html.HiddenFor(model => model.Date, new { htmlAttributes = new { @readonly = "readonly" } })
+          @Html.HiddenFor(model => model.Time, new { type = "time", htmlAttributes = new { @readonly = "readonly" }  })
+          <input type="checkbox" name="Favorite" value="true" checked>
+        }
+      } *@
     </ul>
   </div>
   <div class="col-md-6">
