@@ -29,7 +29,7 @@
           @Html.HiddenFor(Model => Model[i].Info, new { htmlAttributes = new { @readonly = "readonly" } })
           @Html.HiddenFor(Model => Model[i].Date, new { htmlAttributes = new { @readonly = "readonly" } })
           @Html.HiddenFor(Model => Model[i].Time, new { htmlAttributes = new { @readonly = "readonly" }  })
-          <input type="checkbox" name="Favorite" value="true">
+          @Html.CheckBoxFor(Model => Model[i].Favorite)
           <hr />
           </li>
         }

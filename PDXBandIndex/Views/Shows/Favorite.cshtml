@@ -14,6 +14,18 @@
 @Html.HiddenFor(model => model.Info, new { htmlAttributes = new { @readonly = "readonly" } })
 @Html.HiddenFor(model => model.Date, new { htmlAttributes = new { @readonly = "readonly" } })
 @Html.HiddenFor(model => model.Time, new { htmlAttributes = new { @readonly = "readonly" }  })
-<input type="checkbox" name="Favorite" value="true" checked>
-<button type="submit">Favorite!</button>
+<p>Checkbox will be checked if this show is unfavorited. If it is favorited already, it will appear unchecked!</p>
+@* <input class="check" type="checkbox" name="Favorite" value="true" checked>
+<br> *@
+@if (Model.Favorite == true)
+{
+  <input class="check" type="checkbox" name="Favorite" value="true">
+  <br>
+}
+else
+{
+  <input class="check" type="checkbox" name="Favorite" value="true" checked>
+  <br>
+}
+<button type="submit">Submit!</button>
 }
