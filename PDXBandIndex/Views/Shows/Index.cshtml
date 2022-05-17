@@ -22,13 +22,12 @@
         {
           <li>@Html.ActionLink($"{Model[i].Venue}", "Details", new { id = Model[i].ShowId }) - @Html.ActionLink($"{Model[i].Date.Month}/{Model[i].Date.Day}/{Model[i].Date.Year}", "Details", new { id = Model[i].ShowId})
           <br>
-          @Html.CheckBoxFor(x => x[i].Favorite, "true")
-          
+          @Html.EditorFor(x => x[i].Favorite, "true")
           <hr />
           </li>
         }
       </div>
-      <input type="submit" name="Favorite" value="Favorite" /> 
+      <input type="submit" value="Favorite" /> 
       }
     </ul>
   </div>

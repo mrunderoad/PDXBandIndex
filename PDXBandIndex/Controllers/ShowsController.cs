@@ -17,10 +17,13 @@ namespace PDXBandIndex.Controllers
       _db = db;
     }
 
-    public ActionResult Index(string Favorite)
+    public ActionResult Index(bool Favorite, int id)
     {
       List<Show> model = _db.Shows.OrderBy(show => show.Date).Where(show => show.Date > System.DateTime.Today.AddDays(1)).ToList();
-      var favShows = _db.Shows.Where(show => show.Favorite == true);
+      var thisShow = _db.Shows;
+      _db.Entry(thisShow).State = EntityState.Modified;
+      _db.SaveChanges();
+      var favShows = _db.Shows.Where(thisShow => thisShow.Favorite == true);
       ViewBag.Shows = favShows;
       return View(model);
     }
