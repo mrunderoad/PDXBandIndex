@@ -1,6 +1,6 @@
 body {
   background: linear-gradient(to bottom, rgb(159, 159, 159), white, rgb(161, 161, 161));
-  background-image: url(/img/bandSiteBackground.png);
+  background-image: url(/img/other.jpg);
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -33,6 +33,7 @@ div#header {
 .home-btn {
   margin-left: 10vw;
   margin-top: 8px;
+  margin-right: 20px;
 }
 
 .header-btns {
@@ -44,6 +45,7 @@ div#header {
 .log-btn {
   /* margin-left: 2vw; */
   margin-top: 8px;
+  margin-right: 20px;
 }
 
 .col-md-3, .col-md-6 {
@@ -88,6 +90,25 @@ hr {
   background-image: url("https://i.insider.com/5e45b2783b62b778762710a4?width=700");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.favCard {
+  width: 255px;
+  height: 275px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-left: 19px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  border: 5px green inset;
+  background-image: url("https://images.unsplash.com/photo-1501694159270-7b55f5eb85fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2hvd3xlbnwwfHwwfHw%3D&w=1000&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.favs {
+  overflow: scroll;
+  height: 435px;
 }
 
 .today-shows {

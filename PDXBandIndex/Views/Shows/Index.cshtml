@@ -29,12 +29,12 @@
           @Html.HiddenFor(Model => Model[i].Info, new { htmlAttributes = new { @readonly = "readonly" } })
           @Html.HiddenFor(Model => Model[i].Date, new { htmlAttributes = new { @readonly = "readonly" } })
           @Html.HiddenFor(Model => Model[i].Time, new { htmlAttributes = new { @readonly = "readonly" }  })
-          @Html.CheckBoxFor(Model => Model[i].Favorite)
+          @Html.CheckBoxFor(Model => Model[i].Favorite, new { disabled = "disabled" })
           <hr />
           </li>
         }
       </div>
-      <input type="submit" value="Favorite" />
+      @* <input type="submit" value="Favorite" /> *@
       }
       @* @using (Html.BeginForm())
       {
@@ -53,13 +53,16 @@
   <div class="col-md-6">
     <h1>Favorited Shows!</h1>
     <hr />
-    @foreach (var shows in ViewBag.Shows)
-    {
-      <li>@Html.ActionLink($"{shows.Venue}", "Details", new { id = shows.ShowId })</li>
-    }
-
+    <div class="row favs">
+      @foreach (var shows in ViewBag.Shows)
+      {
+        <div class="card favCard">
+        <li>@Html.ActionLink($"{shows.Venue}", "Details", new { id = shows.ShowId })</li>
+        </div>
+      }
+    </div>
   </div>
 </div>  
 
 <p>@Html.ActionLink("Add new Show", "Create")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+@* <p>@Html.ActionLink("Home", "Index", "Home")</p> *@
