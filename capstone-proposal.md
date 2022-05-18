@@ -39,3 +39,4 @@ _My minimum project purpose is for users to view bands and be able to favorite t
 * _research commit_
 * _EOD Research commit_
 * _Morning Research Commit_
+* _Research Commits_
