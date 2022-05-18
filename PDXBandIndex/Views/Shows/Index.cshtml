@@ -41,13 +41,21 @@
     <h1>Favorited Shows!</h1>
     <hr />
     <div class="row favs">
-      @foreach (var shows in ViewBag.Shows)
+      @if (Enumerable.Count(ViewBag.Shows) == 0)
       {
-        <div class="card favCard">
-          <p>@Html.ActionLink($"{shows.Venue}", "Details", new { id = shows.ShowId })</p>
-          <br>
-          <p>@Html.ActionLink($"{shows.Date.Month}/{shows.Date.Day}/{shows.Date.Year}", "Details", new { id = shows.ShowId })</p>
-        </div>
+        <h6 class="no-fav">No favorites have been added yet!</h6>
+        <p class="no-fav">Please click on a show and then click on the favorite button to add the show to this list!</p>
+      }
+      else
+      {
+        @foreach (var shows in ViewBag.Shows)
+        {
+          <div class="card favCard">
+            <p>@Html.ActionLink($"{shows.Venue}", "Details", new { id = shows.ShowId })</p>
+            <br>
+            <p>@Html.ActionLink($"{shows.Date.Month}/{shows.Date.Day}/{shows.Date.Year}", "Details", new { id = shows.ShowId })</p>
+          </div>
+        }
       }
     </div>
   </div>

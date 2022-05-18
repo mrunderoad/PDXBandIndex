@@ -23,11 +23,20 @@
     <h3 class="upcoming">Upcoming Shows</h3>
     <hr />
     <div class="row midCard">
-      @foreach (var shows in ViewBag.Shows) {
-        <div class="card c1">
-          <p>@Html.ActionLink($"{shows.Venue}", "Details", "Shows", new { id = shows.ShowId })</p>
-          <p>@Html.ActionLink($"{shows.Date.Month}/{shows.Date.Day}/{shows.Date.Year}", "Details", new { id = shows.ShowId })</p>
-      </div>
+      @if (Enumerable.Count(ViewBag.Shows) == 0)
+      {
+        <h1>Wait a minute..</h1>
+        <p>There are no upcoming shows! This really sucks!</p>
+        <p>Contact Isaac at <a href="gmail.com">isaacoverstreet3@gmail.com</a> to add a show!</p>
+      }
+      else
+      {
+        @foreach (var shows in ViewBag.Shows) {
+          <div class="card c1">
+            <p>@Html.ActionLink($"{shows.Venue}", "Details", "Shows", new { id = shows.ShowId })</p>
+            <p>@Html.ActionLink($"{shows.Date.Month}/{shows.Date.Day}/{shows.Date.Year}", "Details", new { id = shows.ShowId })</p>
+        </div>
+        }
       }
     </div>
   </div>
@@ -35,10 +44,19 @@
     <h3 class="upcoming">Shows Today!</h3>
     <hr />
     <div class="today">
+      @if (Enumerable.Count(ViewBag.TodayShows) == 0)
+      {
+        <h2>Oh No!</h2>
+        <p>No shows today!</p>
+        <p>Go find something else to do.</p>
+      }
+      else
+      {
       @foreach (var shows in ViewBag.TodayShows)
       {
         <div class="card today-shows"><p>@Html.ActionLink($"{shows.Venue}", "Details", "Shows", new { id = shows.ShowId })</p>
         <p>@Html.ActionLink($"{shows.Date.Month}/{shows.Date.Day}/{shows.Date.Year}", "Details", new { id = shows.ShowId })</p></div>
+      }
       }
     </div>
   </div>
