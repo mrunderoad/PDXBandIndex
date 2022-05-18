@@ -38,12 +38,18 @@
     </ul>
   </div>
   <div class="col-md-6">
-    <h1>Favorited Shows!</h1>
+    @if (Enumerable.Count(ViewBag.Shows) == 0)
+    {
+      <h1>No Favorites Yet!</h1>
+    }
+    else
+    {
+      <h1>Favorited Shows!</h1>
+    }
     <hr />
     <div class="row favs">
       @if (Enumerable.Count(ViewBag.Shows) == 0)
       {
-        <h6 class="no-fav">No favorites have been added yet!</h6>
         <p class="no-fav">Please click on a show and then click on the favorite button to add the show to this list!</p>
       }
       else

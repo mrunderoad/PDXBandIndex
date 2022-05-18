@@ -126,9 +126,27 @@ hr {
   background-repeat: no-repeat;
 }
 
-.row {
-  flex-wrap: wrap;
+.bands-cards {
+  padding-top: 35px;
+  width: 240px;
+  height: 300px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-left: 1px;
+  margin-bottom: 12px;
+  border: 5px green inset;
+  background-image: url("https://media.istockphoto.com/vectors/concert-crowd-people-silhouettes-hands-with-different-gestures-and-vector-id879125474?k=20&m=879125474&s=612x612&w=0&h=ouBoQF3G9YjLitI-VkS6h-qXSK_xFK_ipH6B9Y3to68=");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
+.bands-row {
+  
+}
+
+/* .row {
+  flex-wrap: wrap;
+} */
 
 .welcome, .allGenres {
   margin-bottom: 20px;

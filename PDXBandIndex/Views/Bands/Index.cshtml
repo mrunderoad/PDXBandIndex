@@ -6,21 +6,24 @@
 @model IEnumerable<PDXBandIndex.Models.Band>
 
 <h1>Bands!</h1>
-
-@if (Model.Any())
-{
-  <ul>
-    @foreach (Band band in Model)
-    {
-      <li>@Html.ActionLink($"{band.Name}", "Details", new { id = band.BandId })</li>
-    }
-  </ul>
-} 
-else
-{
-  <h3>No bands have been added yet!</h3>
-}
-
+<hr />
+<div class="row bands-row">
+  @if (Model.Any())
+  {
+    <ul>
+      @foreach (Band band in Model)
+      { 
+        <div class="card bands-cards">
+          <li>@Html.ActionLink($"{band.Name}", "Details", new { id = band.BandId })</li>
+        </div>
+      }
+    </ul>
+  } 
+  else
+  {
+    <h3>No bands have been added yet!</h3>
+  }
+</div>
 @if (User.Identity.Name == "test@test.com")
 {
 <p>@Html.ActionLink("Add new band", "Create")</p>
