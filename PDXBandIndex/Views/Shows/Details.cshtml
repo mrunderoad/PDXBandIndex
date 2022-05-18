@@ -6,24 +6,33 @@
 
 <h2>Show Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Venue): @Html.DisplayFor(model => model.Venue)</h3>
-<h3>@Html.DisplayNameFor(model => model.Date): @Html.DisplayFor(model => model.Date.Month)/@Html.DisplayFor(model => model.Date.Day)/@Html.DisplayFor(model => model.Date.Year)</h3>
-<h3>@Html.DisplayNameFor(model => model.Info): @Html.DisplayFor(model => model.Info)</h3>
+<h1><strong>@Html.DisplayNameFor(model => model.Venue): @Html.DisplayFor(model => model.Venue)</strong></h1>
+<hr />
+<div class="row">
+    <div class="col-lg-4">
+      <h3>@Html.DisplayNameFor(model => model.Date): @Html.DisplayFor(model => model.Date.Month)/@Html.DisplayFor(model => model.Date.Day)/@Html.DisplayFor(model => model.Date.Year)</h3>
+    </div>
+    <div class="col-lg-4">
+      <h3>@Html.DisplayNameFor(model => model.Info): @Html.DisplayFor(model => model.Info)</h3>
+    </div>
 
-@if(@Model.JoinEntities.Count == 0)
-{
-  <p>This is weird.. It seems there are no bands playing this show! *crickets*</p>
-}
-else
-{
-  <h4>Bands playing this show!</h4>
-  <ul>
-  @foreach(var join in Model.JoinEntities)
+  <div class="col-lg-4">
+  @if(@Model.JoinEntities.Count == 0)
   {
-    <li>@join.Band.Name</li>
+    <p>This is weird.. It seems there are no bands playing this show! *crickets*</p>
   }
-  </ul>
-}
+  else
+  {
+    <h4>Bands playing this show!</h4>
+    <ul>
+    @foreach(var join in Model.JoinEntities)
+    {
+      <li>@join.Band.Name</li>
+    }
+    </ul>
+  }
+  </div>
+</div>
 
 <p>@Html.ActionLink("Favorite this show", "Favorite", new { id = Model.ShowId })</p>
 <p>@Html.ActionLink("Back to shows", "Index")</p>

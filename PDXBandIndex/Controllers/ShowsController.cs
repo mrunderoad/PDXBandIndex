@@ -19,9 +19,9 @@ namespace PDXBandIndex.Controllers
 
     public ActionResult Index(bool Favorite, int id)
     {
-      List<Show> model = _db.Shows.OrderBy(show => show.Date).Where(show => show.Date > System.DateTime.Today.AddDays(1)).ToList();
+      List<Show> model = _db.Shows.OrderBy(show => show.Date).Where(show => show.Date >= System.DateTime.Today).ToList();
       var favShows = _db.Shows.Where(thisShow => thisShow.Favorite == true);
-      ViewBag.Shows = favShows;
+      ViewBag.Shows = favShows.Where(x => x.Date >= System.DateTime.Today);
       return View(model);
     }
 

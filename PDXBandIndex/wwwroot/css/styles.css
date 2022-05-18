@@ -38,7 +38,7 @@ div#header {
 
 .header-btns {
   color: blue;
-  background-color: gray;
+  background: rgb(50, 205, 135);  
   border-radius: 5px;
 }
 
@@ -54,7 +54,7 @@ div#header {
   height: auto;
   text-align: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 0px;
 }
 
 .col-md-3 {
@@ -233,7 +233,7 @@ hr {
 }
 
 .options {
-  background-color: rgb(0, 255, 183);
+  background: rgb(50, 205, 135);  
   border-radius: 5px;
 }
 
