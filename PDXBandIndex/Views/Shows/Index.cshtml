@@ -44,12 +44,18 @@
       @foreach (var shows in ViewBag.Shows)
       {
         <div class="card favCard">
-          <li>@Html.ActionLink($"{shows.Venue}", "Details", new { id = shows.ShowId })</li>
+          <p>@Html.ActionLink($"{shows.Venue}", "Details", new { id = shows.ShowId })</p>
+          <br>
+          <p>@Html.ActionLink($"{shows.Date.Month}/{shows.Date.Day}/{shows.Date.Year}", "Details", new { id = shows.ShowId })</p>
         </div>
       }
     </div>
   </div>
 </div>  
 
+
+@if (User.Identity.Name == "test@test.com")
+{
 <p>@Html.ActionLink("Add new Show", "Create")</p>
 @* <p>@Html.ActionLink("Home", "Index", "Home")</p> *@
+}

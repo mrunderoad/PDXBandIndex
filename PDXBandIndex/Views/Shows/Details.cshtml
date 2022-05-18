@@ -27,7 +27,7 @@
     <ul>
     @foreach(var join in Model.JoinEntities)
     {
-      <li>@join.Band.Name</li>
+      <p><strong>@join.Band.Name</strong></p>
     }
     </ul>
   }
@@ -35,6 +35,9 @@
 </div>
 
 <p>@Html.ActionLink("Favorite this show", "Favorite", new { id = Model.ShowId })</p>
+@if (User.Identity.Name == "test@test.com")
+{
 <p>@Html.ActionLink("Back to shows", "Index")</p>
 <p>@Html.ActionLink("Edit show", "Edit", new { id = Model.ShowId })</p>
 <p>@Html.ActionLink("Delete show", "Delete", new { id = Model.ShowId })</p>
+}
