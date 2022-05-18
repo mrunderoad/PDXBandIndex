@@ -29,6 +29,8 @@ namespace PDXBandIndex.Controllers
       ViewBag.Shows = shows.Take(4);
       var todayShows = _db.Shows.Where(x => x.Date == System.DateTime.Today);
       ViewBag.TodayShows = todayShows;
+      var bandsOnShow = _db.BandShow;
+      ViewBag.BandsOnShow = bandsOnShow;
       return View();
     }
 

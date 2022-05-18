@@ -10,14 +10,14 @@
 <div class="row bands-row">
   @if (Model.Any())
   {
-    <ul>
-      @foreach (Band band in Model)
-      { 
-        <div class="card bands-cards">
-          <li>@Html.ActionLink($"{band.Name}", "Details", new { id = band.BandId })</li>
-        </div>
-      }
-    </ul>
+    <div class="rowBands">
+        @foreach (Band band in Model)
+        { 
+          <div class="card bands-cards">
+            <p>@Html.ActionLink($"{band.Name}", "Details", new { id = band.BandId })</p>
+          </div>
+        }
+    </div>
   } 
   else
   {

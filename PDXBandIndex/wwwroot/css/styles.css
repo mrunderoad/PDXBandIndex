@@ -128,20 +128,22 @@ hr {
 
 .bands-cards {
   padding-top: 35px;
-  width: 240px;
-  height: 300px;
+  width: 250px;
+  height: 310px;
   padding-left: 7px;
   padding-right: 7px;
-  margin-left: 1px;
+  margin-left: 28px;
   margin-bottom: 12px;
   border: 5px green inset;
-  background-image: url("https://media.istockphoto.com/vectors/concert-crowd-people-silhouettes-hands-with-different-gestures-and-vector-id879125474?k=20&m=879125474&s=612x612&w=0&h=ouBoQF3G9YjLitI-VkS6h-qXSK_xFK_ipH6B9Y3to68=");
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCTtUcclTOmot2dG8zwxQO03qsBAPWSyW9Uw&usqp=CAU");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.bands-row {
-  
+.bands-row, .rowBands {
+  /* width: 800px; */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* .row {
