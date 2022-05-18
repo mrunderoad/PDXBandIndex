@@ -66,12 +66,9 @@ namespace PDXBandIndex.Controllers
       var thisBand = _db.Bands
           .Include(band => band.JoinEntities)
           .ThenInclude(join => join.Genre)
-          .Include(band => band.JoinEntities2)
+          .Include(band => band.JoinEntities2.OrderBy(JoinEntities2 => JoinEntities2.Show.Date))
           .ThenInclude(join => join.Show)
           .FirstOrDefault(band => band.BandId == id);
-          var sortedShows = _db.Bands.Include(band => band.JoinEntities2).ThenInclude(join => join.OrderBy(join => join.Date));
-          ViewBag.SortedShows = sortedShows;
-
       return View(thisBand);
     }
 

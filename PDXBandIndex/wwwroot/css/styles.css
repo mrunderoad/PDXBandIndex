@@ -216,6 +216,12 @@ hr {
   height: 325px;
   border: none;
 }
+
+.bandshows {
+  overflow: scroll;
+  height: 375px;
+  border: none;
+}
   
   /* Scrollbar styles */
   ::-webkit-scrollbar {

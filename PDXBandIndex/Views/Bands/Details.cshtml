@@ -31,20 +31,23 @@
     <hr />
   </div>
   <div class="col-md-4">
+    <h4><em>Shows</em> @Html.DisplayFor(model => model.Name) is playing</h4>
+    <div class="bandshows">
     @if(@Model.JoinEntities2.Count == 0)
     {
       <p>@Html.DisplayFor(model => model.Name) has no upcoming shows.</p>
     }
     else
     {
-      <h4><em>Shows</em> @Html.DisplayFor(model => model.Name) is playing</h4>
+      
       <hr />
       @foreach(var join in Model.JoinEntities2)
       {
         <p>@Html.ActionLink($"{join.Show.Venue}", "Index", "Shows")</p>
+        <p>@Html.ActionLink($"{join.Show.Date.Month}/{join.Show.Date.Day}/{join.Show.Date.Year}", "Index", "Shows")</p>
+        <hr class="b" /> 
       }
     }
-    <hr />
     @* <ul>
       @foreach(var join in Model.JoinEntities)
       {
@@ -56,6 +59,7 @@
         }
       }
     </ul> *@
+    </div>
   </div>
 </div>
 
