@@ -38,6 +38,7 @@
     else
     {
       <h4><em>Shows</em> @Html.DisplayFor(model => model.Name) is playing</h4>
+      <hr />
       @foreach(var join in Model.JoinEntities2)
       {
         <p>@Html.ActionLink($"{join.Show.Venue}", "Index", "Shows")</p>
