@@ -20,7 +20,7 @@
       <div class="upcomingShows">
         @for(int i = 0; i < Model.Count; i++)
         {
-          <li>@Html.ActionLink($"{Model[i].Venue}", "Details", new { id = Model[i].ShowId }) - @Html.ActionLink($"{Model[i].Date.Month}/{Model[i].Date.Day}/{Model[i].Date.Year}", "Details", new { id = Model[i].ShowId}) @Html.DisplayFor(Model => Model[i].ShowId)
+          <li>@Html.ActionLink($"{Model[i].Venue}", "Details", new { id = Model[i].ShowId }) - @Html.ActionLink($"{Model[i].Date.Month}/{Model[i].Date.Day}/{Model[i].Date.Year}", "Details", new { id = Model[i].ShowId})
           <br>
           @Html.DisplayFor(Model => Model[i].Time, new { htmlAttributes = new { type = "time" }})
           @Html.HiddenFor(Model => Model[i].ShowId)
@@ -28,7 +28,7 @@
           @Html.HiddenFor(Model => Model[i].Info, new { htmlAttributes = new { @readonly = "readonly" } })
           @Html.HiddenFor(Model => Model[i].Date, new { htmlAttributes = new { @readonly = "readonly" } })
           @Html.HiddenFor(Model => Model[i].Time, new { htmlAttributes = new { @readonly = "readonly" }  })
-          @Html.CheckBoxFor(Model => Model[i].Favorite, new { disabled = "disabled" })
+          @* @Html.CheckBoxFor(Model => Model[i].Favorite, new { disabled = "disabled" }) *@
           <hr />
           </li>
         }
