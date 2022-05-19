@@ -59,7 +59,7 @@
           <p>@Html.ActionLink($"{shows.Date.Month}/{shows.Date.Day}/{shows.Date.Year}", "Details", new { id = shows.ShowId })</p>
           @if (shows.Date == System.DateTime.Today)
           {
-            <h5 class="change-color"><strong>TODAY!</strong></h5>
+            <h5 class="change-color todayBlack"><strong>TODAY!</strong></h5>
           }
         </div>
       }

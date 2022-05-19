@@ -13,11 +13,13 @@
   @Html.HiddenFor(model => model.ShowId)
 
   @Html.LabelFor(model => model.Venue)
-  @Html.EditorFor(model => model.Venue)
+  @Html.EditorFor(model => model.Venue, new { required = "required" })
   @Html.LabelFor(model => model.Date)
-  @Html.TextBoxFor(model => model.Date, new { type = "date" })
+  @Html.TextBoxFor(model => model.Date, new { type = "date", required = "required" })
+  @Html.LabelFor(model => model.Time)
+  @Html.TextBoxFor(model => model.Time, new { type = "time", required = "required" })
   @Html.LabelFor(model => model.Info)
-  @Html.TextBoxFor(model => model.Info)
+  @Html.TextBoxFor(model => model.Info, new { required = "required" })
 
   <input type="submit" value="Save" />
 }

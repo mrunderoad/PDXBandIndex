@@ -295,11 +295,20 @@ input.check {
   -webkit-animation: colorchange 10s infinite alternate;
 }
 
-/* @keyframes color-change {
-  0% { color: rgb(255, 103, 103); }
+.change-colors {
+  animation: color-change 2s infinite;
+  background-color: black;
+}
+
+.todayBlack {
+  background-color: black;
+}
+
+@keyframes color-change {
+  0% { color: rgb(255, 0, 0); }
   50% { color: blue; }
-  100% { color: rgb(246, 255, 0); }
-} */
+  100% { color: rgb(255, 0, 0); }
+}
 
 @-webkit-keyframes colorchange {
   0% {
