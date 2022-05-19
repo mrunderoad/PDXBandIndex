@@ -6,7 +6,7 @@
 
 <h2>Show Details</h2>
 <hr />
-<h1><strong>@Html.DisplayNameFor(model => model.Venue): @Html.DisplayFor(model => model.Venue)</strong></h1>
+<h1>@Html.DisplayNameFor(model => model.Venue): <strong><em>@Html.DisplayFor(model => model.Venue)</em></strong></h1>
 <hr />
 <div class="row">
     <div class="col-lg-4">
@@ -24,17 +24,24 @@
   else
   {
     <h4>Bands playing this show!</h4>
-    <ul>
+    <hr />
     @foreach(var join in Model.JoinEntities)
     {
-      <p><strong>@join.Band.Name</strong></p>
+      <h4><strong>@join.Band.Name</strong></h4>
     }
-    </ul>
+
   }
   </div>
 </div>
 
+@if (Model.Favorite == true)
+{
+  <p>@Html.ActionLink("Unfavorite this show", "Favorite", new { id = Model.ShowId })</p>
+}
+else
+{
 <p>@Html.ActionLink("Favorite this show", "Favorite", new { id = Model.ShowId })</p>
+}
 @if (User.Identity.Name == "test@test.com")
 {
 <p>@Html.ActionLink("Back to shows", "Index")</p>

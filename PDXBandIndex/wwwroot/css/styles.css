@@ -290,3 +290,49 @@ input.check {
 .contact {
   margin-top: 200px;
 }
+
+.change-color {
+  -webkit-animation: colorchange 10s infinite alternate;
+}
+
+/* @keyframes color-change {
+  0% { color: rgb(255, 103, 103); }
+  50% { color: blue; }
+  100% { color: rgb(246, 255, 0); }
+} */
+
+@-webkit-keyframes colorchange {
+  0% {
+    color: blue;
+  }
+  10% {
+    color: #8e44ad;
+  }
+  20% {
+    color: #1abc9c;
+  }
+  30% {
+    color: #d35400;
+  }
+  40% {
+    color: blue;
+  }
+  50% {
+    color: #34495e;
+  }
+  60% {
+    color: blue;
+  }
+  70% {
+    color: #2980b9;
+  }
+  80% {
+    color: #f1c40f;
+  }
+  90% {
+    color: #2980b9;
+  }
+  100% {
+    color: pink;
+  }
+}

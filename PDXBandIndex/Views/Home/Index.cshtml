@@ -54,8 +54,14 @@
       {
       @foreach (var shows in ViewBag.TodayShows)
       {
-        <div class="card today-shows"><p>@Html.ActionLink($"{shows.Venue}", "Details", "Shows", new { id = shows.ShowId })</p>
-        <p>@Html.ActionLink($"{shows.Date.Month}/{shows.Date.Day}/{shows.Date.Year}", "Details", new { id = shows.ShowId })</p></div>
+        <div class="card today-shows">
+          <p>@Html.ActionLink($"{shows.Venue}", "Details", "Shows", new { id = shows.ShowId })</p>
+          <p>@Html.ActionLink($"{shows.Date.Month}/{shows.Date.Day}/{shows.Date.Year}", "Details", new { id = shows.ShowId })</p>
+          @if (shows.Date == System.DateTime.Today)
+          {
+            <h5 class="change-color"><strong>TODAY!</strong></h5>
+          }
+        </div>
       }
       }
     </div>

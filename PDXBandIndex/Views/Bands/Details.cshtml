@@ -45,13 +45,13 @@
       {
         @if (join.Show.Date == System.DateTime.Today)
         {
-          <h5><strong>TODAY! TODAY! TODAY!</strong></h5>
+          <h5 class="change-color"><strong>TODAY! TODAY! TODAY!</strong></h5>
         }
         <p>@Html.ActionLink($"{join.Show.Venue}", "Index", "Shows")</p>
         <p>@Html.ActionLink($"{join.Show.Date.Month}/{join.Show.Date.Day}/{join.Show.Date.Year}", "Index", "Shows")</p>
         @if (join.Show.Date == System.DateTime.Today)
         {
-          <h5><strong>TODAY! TODAY! TODAY!</strong></h5>
+          <h5 class="change-color"><strong>TODAY! TODAY! TODAY!</strong></h5>
         }
         <hr class="b" /> 
       }

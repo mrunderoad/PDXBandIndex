@@ -29,6 +29,10 @@
           @Html.HiddenFor(Model => Model[i].Date, new { htmlAttributes = new { @readonly = "readonly" } })
           @Html.HiddenFor(Model => Model[i].Time, new { htmlAttributes = new { @readonly = "readonly" }  })
           @* @Html.CheckBoxFor(Model => Model[i].Favorite, new { disabled = "disabled" }) *@
+          @if (Model[i].Date == System.DateTime.Today)
+            {
+              <p class="change-color"><strong>TODAY!</strong></p>
+            }
           <hr />
           </li>
         }
@@ -59,6 +63,10 @@
             <p>@Html.ActionLink($"{shows.Venue}", "Details", new { id = shows.ShowId })</p>
             <br>
             <p>@Html.ActionLink($"{shows.Date.Month}/{shows.Date.Day}/{shows.Date.Year}", "Details", new { id = shows.ShowId })</p>
+            @if (shows.Date == System.DateTime.Today)
+            {
+              <h5 class="change-color"><strong>TODAY!</strong></h5>
+            }
           </div>
         }
       }
