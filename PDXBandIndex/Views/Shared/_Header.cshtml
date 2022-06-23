@@ -1,19 +1,19 @@
-
-
 <div id="header">
   <div class="container">
     <div class="row">
       <h2 class="logo-text">PDX Band Index</h2>
       <button class="home-btn header-btns">@Html.ActionLink("Home", "Index", "Home")</button>
       @if (User.Identity.IsAuthenticated) {
-        <button class="log-btn header-btns">@Html.ActionLink("Log Out", "Index", "Account")</button>
         <button class="log-btn header-btns">@Html.ActionLink("Shows", "Index", "Shows")</button>
+        <button class="log-btn header-btns">@Html.ActionLink("Contact Us!", "Index", "Contact")</button>
+        <button class="log-btn header-btns" style="margin-left: 31%;">@Html.ActionLink("Log Out", "Index", "Account")</button>
       } 
       else
       {
         <button class="log-btn header-btns">@Html.ActionLink("Log In", "Index", "Account")</button>
+        <button class="log-btn header-btns">@Html.ActionLink("Contact Us!", "Index", "Contact")</button>
       }
-      <button class="log-btn header-btns">@Html.ActionLink("Contact Us!", "Index", "Contact")</button>
+      
     </div>
   </div> 
 </div> 

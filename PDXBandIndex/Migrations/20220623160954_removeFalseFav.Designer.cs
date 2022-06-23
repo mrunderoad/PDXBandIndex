@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PDXBandIndex.Models;
 
 namespace PDXBandIndex.Migrations
 {
     [DbContext(typeof(PDXBandIndexContext))]
-    partial class PDXBandIndexContextModelSnapshot : ModelSnapshot
+    [Migration("20220623160954_removeFalseFav")]
+    partial class removeFalseFav
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
