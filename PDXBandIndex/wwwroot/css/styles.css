@@ -345,3 +345,7 @@ input.check {
     color: pink;
   }
 }
+
+.search-box-place {
+  max-width: 10rem;
+}

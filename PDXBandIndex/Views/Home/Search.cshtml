@@ -11,8 +11,10 @@
 <div class="search-box">
   @using (Html.BeginForm())
   {
-    @Html.TextBoxFor(model => model.Search, new {placeholder = "Search"})
-    <input type="submit" value="Find It!" />
+    <div class="search-box-place">
+      @Html.TextBoxFor(model => model.Search, new {placeholder="Search", @class="form-control text-center", @style="width: 40rem; margin: auto;" })
+    </div>  
+    <input type="submit" class="btn btn-primary mt-2" value="Search!" />
   }
 </div>
 <br>

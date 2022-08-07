@@ -27,9 +27,9 @@ namespace PDXBandIndex.Controllers
     public async Task<ActionResult> Index(bool Favorite, int id)
     {
       List<Show> model = _db.Shows.OrderBy(show => show.Date).Where(show => show.Date >= System.DateTime.Today).ToList();
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-      // var favShows = _db.Shows.Favorite.Where(entry => entry.User.Id == currentUser.Id).OrderBy(thisShow => thisShow.Date).Where(thisShow => thisShow.Favorite == true);
+      // var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      // var currentUser = await _userManager.FindByIdAsync(userId);
+      // var favShows = _db.Shows.Where(entry => entry.User.Id == currentUser.Id).OrderBy(thisShow => thisShow.Date).Where(thisShow => thisShow.Favorite == true);
       var favShows = _db.Shows.OrderBy(x => x.Date).Where(thisShow => thisShow.Favorite == true);
       ViewBag.Shows = favShows.OrderBy(x => x.Date).Where(x => x.Date >= System.DateTime.Today);
       return View(model);
