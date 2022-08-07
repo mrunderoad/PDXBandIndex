@@ -4,14 +4,14 @@
 
 @model PDXBandIndex.Models.Band
 
-<h1>Search For Bands, Genres or Shows!</h1>
-<p>Shows must be searched by Venue name.</p>
+<h1>Search For Bands, Genres or Venues!</h1>
+@* <p>Shows must be searched by Venue name.</p> *@
 <hr />
 
 <div class="search-box">
   @using (Html.BeginForm())
   {
-    <div class="search-box-place">
+    <div class="search-box-place row">
       @Html.TextBoxFor(model => model.Search, new {placeholder="Search", @class="form-control text-center", @style="width: 40rem; margin: auto;" })
     </div>  
     <input type="submit" class="btn btn-primary mt-2" value="Search!" />
@@ -31,7 +31,9 @@
       <hr />
       @foreach (var bands in ViewBag.Bands)
       {
-        <li>@Html.ActionLink($"{bands.Name}", "Details", "Bands", new { id = bands.BandId })</li>
+        <div class="card search-card">
+          <li>@Html.ActionLink($"{bands.Name}", "Details", "Bands", new { id = bands.BandId })</li>
+        </div>
       }
     }
   </div>
@@ -67,4 +69,22 @@
       }
     }
   </div>
+  @* @if (@ViewBag.Bands.Count > 0)
+  {
+    @foreach (var bands in ViewBag.Bands)
+    {
+      <div class="card">
+        <h3>@Html.ActionLink($"{bands.Name}", "Details", "Bands", new { id = bands.BandId })</h3>
+      </div>
+    }
+  }
+
+  @if (@ViewBag.Shows.Count > 0)
+  {
+    <h3><ul>SHOWS:</ul></h3>
+    @foreach (var shows in ViewBag.Shows)
+    {
+      <li>@Html.ActionLink($"{shows.Venue}", "Details", "Shows", new { id = shows.ShowId })</li>
+    }
+  } *@
 </div>
